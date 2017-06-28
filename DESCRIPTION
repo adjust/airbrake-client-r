@@ -1,0 +1,14 @@
+Package: airbrakeR
+Type: Package
+Title: Airbrake interface for R
+Version: 0.0.1
+Date: 2017-06-27
+Author: Nikola Chochkov
+Maintainer: Nikola Chochkov <nikola@adjust.com>
+Description: Allows error reporting to Airbrake API from an R session, Shiny app, etc.
+License: MIT License
+Depends:
+    httr
+Collate:
+    'client.R'
+RoxygenNote: 6.0.1
