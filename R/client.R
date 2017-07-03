@@ -28,7 +28,7 @@ airbrake.notify <- function(error) {
   }'
 
   err.type    <- paste(class(error), collapse=',')
-  err.message <- gsub('\\n', '', as.character(error))
+  err.message <- gsub('(\\n|\\")', '', as.character(error))
   hostname    <- Sys.info()['nodename']
   payload     <- sprintf(template, err.type, err.message, hostname)
 
