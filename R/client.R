@@ -40,3 +40,11 @@ airbrake.notify <- function(error) {
   else
     cat("Error connecting to Airbrake:", status_code(resp), "\n")
 }
+
+#' Send an Airbrake notification on error and then raise the error again. Useful
+#' for scripts where the proper OS exit codes are relevant.
+#' @export
+airbrake.notify.and.raise <- function(error) {
+  airbrake.notify(error)
+  stop(error)
+}
